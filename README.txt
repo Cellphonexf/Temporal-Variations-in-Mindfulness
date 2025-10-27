@@ -1,14 +1,15 @@
-##Adaptive Time Management within Life History: The Effects of Cross-Lifespan Episodic Thinking on Intertemporal Choice, Time Perception, and Resource Allocation##
+##From Present Awareness to Life’s Endpoint: A Randomized Controlled Pilot Study on Temporal Variation in Mindfulness##
 
 Welcome to the GitHub repository for our research project. This repository contains the code and data used in our study.
 
 ##Data and Code Usage##
 
 Data: rawdata.xlsx
-Script for Analysis & Viso: DataAnalysis&Viso.R
+Script for Analysis & Viso: DataAnalysis&Viso1.R & DataAnalysis&Viso2.R 
 
 - Run the script segment by segment to follow each step of our analysis
-- Generated graphs: pic_logk.pdf, pic_time.pdf, pic_tp.pdf, pic_int.pdf, pic_emo_endpoint.pdf, pic_emo_present.pdf
-- Final figure: Fig. 1 (experimental diagram), Fig. 2, and Fig. 3 (refined using Adobe Illustrator)
+- Generated graphs: pic_dd.pdf, pic_time, pic_ra.pdf, pic_emoProp.pdf
+- Frequency table for emotion types (for Table 1): Table1_EmotionType_byGroup_simple.csv
+- Final figures: Fig. 1 (experimental diagram) & Fig. 2, both refined using Adobe Illustrator
 
-##Edited on June 14, 2025
+##Edited on October 27, 2025
