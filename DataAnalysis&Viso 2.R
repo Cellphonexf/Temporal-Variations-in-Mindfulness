@@ -1,8 +1,8 @@
-# Mental exercise: Endpoint-focused vs. Present-focused
+# Meditation exercise: Endpoint-focused vs. Present-focused
 # Behavioral data analysis & plotting
 # For: emotional experiences
 # Requires: "rawdata.xlsx" (sheet = "rawdata1")
-# Programmed by Feng XIAO (updated on 2025-10-25)
+# Programmed by Feng XIAO (updated on 2026-3-18)
 
 ####################################################################################################
 ### 0) Preparation ---------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ if (requireNamespace("rstudioapi", quietly = TRUE)) {
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 }
 
-# Global ggplot defaults (journal-like)
+# Global ggplot defaults
 theme_set(theme_classic(base_size = 8))
 
 ####################################################################################################
@@ -174,7 +174,7 @@ p_emoprop <- ggplot(emo_prop, aes(x = Emotion3, y = prop, fill = Group)) +
   scale_fill_manual(values = grp_cols) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1),
                      limits = c(0, 1), expand = c(0, 0)) +
-  labs(x = NULL, y = "Proportion within group") +
+  labs(x = NULL, y = "Proportion within group (%)") +
   theme(
     axis.line   = element_line(colour = "black", linewidth = 0.35),
     axis.title  = element_text(size = 7, colour = "black"),

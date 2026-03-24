@@ -1,8 +1,8 @@
-# Mental exercise: Endpoint-focused vs. Present-focused
+# Meditation: Endpoint-focused vs. Present-focused
 # Behavioral data analysis & plotting
 # For: delay discounting, engagement, time perception, resource allocation
 # Requires: "rawdata.xlsx" (sheet = "rawdata1")
-# Programmed by Feng XIAO (updated on 2025-10-25)
+# Programmed by Feng XIAO (updated on 2026-3-16)
 
 ####################################################################################################
 ### 0) Preparation ---------------------------------------------------------------------------------
@@ -11,7 +11,7 @@
 # Load packages actually used
 pkg <- c(
   "car","tidyr","dplyr","readxl","effectsize","lme4","lmerTest",
-  "emmeans","ggplot2","patchwork","withr","randomForest"
+  "emmeans","ggplot2","patchwork","withr"
 )
 lapply(pkg, require, character.only = TRUE)
 
@@ -20,7 +20,7 @@ if (requireNamespace("rstudioapi", quietly = TRUE)) {
   setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 }
 
-# Global ggplot defaults (journal-like)
+# Global ggplot defaults
 theme_set(theme_classic(base_size = 8))
 
 # Helper: partial eta-squared from car::Anova(Type III) table
@@ -190,7 +190,7 @@ p_dd <- ggplot(em_plot, aes(time, emmean, group = Group, colour = Group, shape =
 ggsave("pic_dd.pdf", plot = p_dd, width = 2, height = 2, units = "in", device = cairo_pdf)
 
 ####################################################################################################
-### 3) ANCOVA: Subjective time perception ----------------------------------------------------------
+### 3) ANCOVA: Time perception ----------------------------------------------------------
 ####################################################################################################
 
 dat <- rd %>%
@@ -374,7 +374,7 @@ print(a3_DS); print(a3_DL); print(a3_DLS)  # Type-III tables
 tab_ancova                                # For reporting
 tab_cmp                                    # Holm-adjusted pairwise (Group)
 
-# ROBUSTNESS: short vs long only (same sample as D_LS)
+# ROBUSTNESS: short vs long saving only (same sample as D_LS)
 dat_SL <- dat %>%
   transmute(
     SubjNum,
