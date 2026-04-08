@@ -2,7 +2,7 @@
 # Behavioral data analysis & plotting
 # For: emotional experiences
 # Requires: "rawdata.xlsx" (sheet = "rawdata1")
-# Programmed by Feng XIAO (updated on 2026-3-18)
+# Programmed by Feng XIAO (updated on 2026-4-7)
 
 ####################################################################################################
 ### 0) Preparation ---------------------------------------------------------------------------------
@@ -71,6 +71,18 @@ emo_table <- emo_long %>%
   ) %>%
   mutate(Total = present + endpoint) %>%
   arrange(desc(Total))
+
+## Chi-sqaure test for full emotion type (endpoint vs present)
+tab_full <- emo_table %>%
+  dplyr::select(Emotion, present, endpoint)
+tab_full_mat <- as.data.frame(tab_full)
+rownames(tab_full_mat) <- tab_full_mat$Emotion
+tab_full_mat$Emotion <- NULL
+tab_full_mat <- as.matrix(tab_full_mat)
+tab_full_t <- t(tab_full_mat)
+chisq_full <- chisq.test(tab_full_t)
+chisq_full
+
 print(emo_table, n = nrow(emo_table))
 readr::write_csv(emo_table, "Table1_EmotionType_byGroup_simple.csv")
 

@@ -1,4 +1,4 @@
-##From Present Awareness to Life's Endpoint: Endpoint-Focused Meditation and the Regulation of Temporal Horizon##
+##Mindfulness with Mental Time Travel: Emotional and Behavioral Effects of Endpoint-Focused Meditation##
 
 Welcome to the GitHub repository for our research project. This repository contains the code and data used in our study.
 
@@ -12,4 +12,4 @@ Script for Analysis & Viso: DataAnalysis&Viso1.R, DataAnalysis&Viso2.R,   DataAn
 - Frequency table for emotion types (for Table 1): Table1_EmotionType_byGroup_simple.csv
 - Final figures: Fig. 1 (experimental diagram) & Fig. 2, both refined using Adobe Illustrator
 
-##Edited on March 24, 2026
+##Edited on April 8, 2026
