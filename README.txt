@@ -1,5 +1,7 @@
 ##Mindfulness with Mental Time Travel: Emotional and Behavioral Effects of Endpoint-Focused Meditation##
 
+##Disclaimer: The data provided here are part of an unpublished manuscript currently under review/preparation. Redistribution, citation, or use of these materials is not permitted without explicit consent from the corresponding author. Unauthorized use or distribution will be considered a violation of academic integrity and may result in legal consequences.##
+
 Welcome to the GitHub repository for our research project. This repository contains the code and data used in our study.
 
 ##Data and Code Usage##
@@ -12,4 +14,4 @@ Script for Analysis & Viso: DataAnalysis&Viso1.R, DataAnalysis&Viso2.R,   DataAn
 - Frequency table for emotion types (for Table 1): Table1_EmotionType_byGroup_simple.csv
 - Final figures: Fig. 1 (experimental diagram) & Fig. 2, both refined using Adobe Illustrator
 
-##Edited on April 8, 2026
+##Edited on April 24, 2026
