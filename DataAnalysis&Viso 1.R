@@ -2,7 +2,7 @@
 # Behavioral data analysis & plotting
 # For: delay discounting, engagement, time perception, resource allocation
 # Requires: "rawdata.xlsx" (sheet = "rawdata1")
-# Programmed by Feng XIAO (updated on 2026-3-16)
+# Programmed by Feng XIAO (updated on 2026-5-7)
 
 ####################################################################################################
 ### 0) Preparation ---------------------------------------------------------------------------------
@@ -402,6 +402,24 @@ emm_SL2 <- emmeans(m_SL, ~ Account * Group)
 print(summary(contrast(emm_SL2,
                        list("Delta(Long-Short): endpoint - present" = c(-1, 1, 1, -1))),
               infer = c(TRUE, TRUE)))
+
+# Effect size for within-group Long vs Short comparisons: Cohen's dz
+dz_SL <- dat %>%
+  transmute(
+    SubjNum,
+    Group = relevel(factor(Group), ref = "present"),
+    D_LS = Account_LongTerm - Account_ShortTerm
+  ) %>%
+  filter(!is.na(D_LS)) %>%
+  group_by(Group) %>%
+  summarise(
+    n = n(),
+    mean_diff = mean(D_LS),
+    sd_diff = sd(D_LS),
+    dz = mean_diff / sd_diff,
+    .groups = "drop"
+  )
+print(dz_SL) # present-focused: d = 0.25
 
 # Plot
 # Adjusted means (¡À95% CI) for each Account ¡Á Group

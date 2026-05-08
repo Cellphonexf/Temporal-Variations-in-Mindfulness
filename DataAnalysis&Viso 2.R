@@ -2,7 +2,7 @@
 # Behavioral data analysis & plotting
 # For: emotional experiences
 # Requires: "rawdata.xlsx" (sheet = "rawdata1")
-# Programmed by Feng XIAO (updated on 2026-4-7)
+# Programmed by Feng XIAO (updated on 2026-5-7)
 
 ####################################################################################################
 ### 0) Preparation ---------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ emo_long <- emo_long %>%
 ####################################################################################################
 
 # lock order for readability; drop "Other"
-emo3_levels <- c("Peace","Relaxation","Sadness")
+emo3_levels <- c("Peace","Relaxation","Melancholy")
 emo3 <- emo_long %>%
   filter(Emotion %in% emo3_levels) %>%
   mutate(
@@ -171,7 +171,7 @@ emo_prop <- emo3 %>%
   dplyr::ungroup() %>%
   dplyr::mutate(
     Group   = factor(Group, levels = c("endpoint","present")),
-    Emotion3 = factor(Emotion3, levels = c("Peace","Relaxation","Sadness"))
+    Emotion3 = factor(Emotion3, levels = c("Peace","Relaxation","Melancholy"))
   )
 
 # Aesthetics setting
